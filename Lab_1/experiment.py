@@ -43,7 +43,11 @@ for p in p_values:
     results.append({'p': p, 'relative frequency': relative_freq})
 
 df = pd.DataFrame(results)
-print(df.to_string(index=False))
+print("-" * 30)
+print(f"{'p':<10} {'relative frequency':<20}")
+print("-" * 30)
+for _, row in df.iterrows():
+    print(f"{row['p']:<10.1f} {row['relative frequency']:<20.3f}")
 
 
 
